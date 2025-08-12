@@ -5,7 +5,7 @@ from fastmcp import FastMCP
 
 mcp = FastMCP(name="mcp-map")
 
-load_dotenv("mcp_map_server/env/data.env")
+#load_dotenv("mcp_map_server/env/data.env")
 KAKAO_APP_KEY = os.getenv('kakao_app_key')
 KAKAO_URL = os.getenv('kakao_url')
 kakao_headers = {
@@ -21,6 +21,12 @@ google_headers = {
   "X-Goog-Api-Key": GOOGLE_API_KEY, 
   "Content-Type": "application/json;charset=UTF-8"
 }
+
+#print(KAKAO_APP_KEY)
+#print(KAKAO_URL)
+#print(GOOGLE_API_KEY)
+#print(GOOGLE_MAP_URL)
+#print(GOOGLE_ROUTE_URL)
 
 @mcp.tool(
   name="getKakaoMapInfo", 

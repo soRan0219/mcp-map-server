@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "mcp_map_server", from = "src"}]
+packages = [{include = "mcp_map_server"}]
 
 
 [build-system]
