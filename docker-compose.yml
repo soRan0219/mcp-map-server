@@ -1,0 +1,9 @@
+version: ""
+services: 
+  app: 
+    build: .
+    container_name: mcp-map-server
+    env_file: 
+      - /opt/mcp-map-server/.data.env
+    ports: 
+      - "80:80"

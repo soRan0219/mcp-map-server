@@ -14,9 +14,9 @@ kakao_headers = {
   "Content-Type": "application/json;charset=UTF-8"
 }
 
-GOOGLE_API_KEY = str(os.getenv('google_api_key'))
-GOOGLE_MAP_URL = str(os.getenv('google_map_url'))
-GOOGLE_ROUTE_URL = str(os.getenv('google_route_url'))
+GOOGLE_API_KEY = os.getenv('google_api_key')
+GOOGLE_MAP_URL = os.getenv('google_map_url')
+GOOGLE_ROUTE_URL = os.getenv('google_route_url')
 google_headers = {
   "X-Goog-Api-Key": GOOGLE_API_KEY, 
   "Content-Type": "application/json;charset=UTF-8"
@@ -99,4 +99,4 @@ async def getGoogleRoute(
     return route
 
 if __name__=="__main__": 
-  mcp.run()
+  mcp.run(transport="http", host="0.0.0.0", port=80)

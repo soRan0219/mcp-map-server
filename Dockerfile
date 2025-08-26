@@ -13,6 +13,8 @@ COPY . .
 RUN poetry install --no-interaction --no-ansi
 #dev group이 있다면 --without dev 옵션 추가
 
+EXPOSE 80
+
 ENV PYTHONUNBUFFERED=1
 
-CMD ["poetry", "run", "python", "-m", "mcp_map_server.server"]
+CMD ["poetry", "run", "python", "-m", "mcp_map_server.server", "--transport", "http", "--port", "80"]
