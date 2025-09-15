@@ -8,19 +8,21 @@ pipeline {
             url: 'https://github.com/soRan0219/mcp-map-server.git'
       }
     }
-    stage('test') {
-      steps {
-        echo 'test stage'
-      }
-    }
     stage('build') {
       steps {
         echo 'build stage'
       }
     }
-    stage('docker build') {
+    stage('test') {
       steps {
-        echo 'docker build stage'
+        echo 'test stage'
+      }
+    }
+    stage('deploy') {
+      steps {
+        echo 'deploy stage'
+        sh 'docker-compose down || true'
+        sh 'docker-compose --build up -d'
       }
     }
   }
