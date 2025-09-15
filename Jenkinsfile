@@ -22,7 +22,7 @@ pipeline {
       steps {
         echo 'deploy stage'
         sh 'docker-compose down || true'
-        sh 'docker-compose --build up -d'
+        sh 'docker-compose up --build -d'
       }
     }
   }
