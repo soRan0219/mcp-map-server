@@ -99,4 +99,8 @@ async def getGoogleRoute(
     return route
 
 if __name__=="__main__": 
-  mcp.run(transport="http", host="0.0.0.0", port=80)
+  mode = os.getenv("MCP_MODE", "http")
+  if mode == "stdio": 
+    map.run(transport="stdio")
+  else: 
+    mcp.run(transport="http", host="0.0.0.0", port=80)

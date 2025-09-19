@@ -16,6 +16,7 @@ pipeline {
     stage('test') {
       steps {
         echo 'test stage'
+        sh 'poetry run python tests/test.py'
       }
     }
     stage('deploy') {
